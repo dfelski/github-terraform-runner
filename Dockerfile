@@ -11,4 +11,3 @@ FROM tcardonne/github-runner:latest
 
 # Install Terraform
 COPY --from=builder /terraform /usr/bin/terraform
-#RUN ln -s /usr/share/terraform /usr/bin/terraform
