@@ -9,5 +9,8 @@ RUN wget -q https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraf
 
 FROM tcardonne/github-runner:latest
 
+# Add github.com to ~/.ssh/known_hosts
+RUN mkdir ~/.ssh && ssh-keyscan -t rsa,dsa github.com > ~/.ssh/known_hosts
+
 # Install Terraform
 COPY --from=builder /terraform /usr/bin/terraform
