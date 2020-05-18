@@ -7,7 +7,7 @@ ARG TERRAFORM_VERSION=0.12.24
 
 RUN wget -q https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -O terraform.zip && unzip -o terraform.zip && rm terraform.zip
 
-FROM tcardonne/github-runner:latest
+FROM tcardonne/github-runner:v1.3.0
 
 # Add github.com to ~/.ssh/known_hosts
 RUN mkdir ~/.ssh && ssh-keyscan -t rsa,dsa github.com > ~/.ssh/known_hosts
