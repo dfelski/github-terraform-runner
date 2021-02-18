@@ -3,7 +3,7 @@ FROM debian:10-slim AS builder
 RUN apt update && apt install -y wget unzip;
 
 # Download and unpack Terraform
-ARG TERRAFORM_VERSION=0.14.6
+ARG TERRAFORM_VERSION=0.14.7
 
 RUN wget -q https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -O terraform.zip && unzip -o terraform.zip && rm terraform.zip
 
